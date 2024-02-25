@@ -1,18 +1,21 @@
 package main
 
-import "strconv"
+import (
+	"strconv"
+)
 
 func main() {
-	isPalindrome(1221)
+	isPalindrome(121121)
 }
 
 func isPalindrome(n int) bool {
 	s := strconv.Itoa(n)
-	for i := 0; i < len(s)/2; i++ {
-		if s[i] != s[len(s)-1-i] {
+	count := len(s) / 2
+
+	for i := 0; i < count; i++ {
+		if s[i] != s[len(s)-i-1] {
 			return false
 		}
 	}
 	return true
-
 }
